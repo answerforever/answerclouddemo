@@ -2,6 +2,7 @@ logging:
   level:
     #        tk.mybatis: DEBUG
     com.answercloud.demo: DEBUG
+  config: classpath:logback.xml
 spring:
   application:
     name: answer-local
