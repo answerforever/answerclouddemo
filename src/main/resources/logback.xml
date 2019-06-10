@@ -1,4 +1,5 @@
 <configuration>
+    <appender name="CatAppender" class="com.answercloud.demo.logappender.CatLogbackAppender"></appender>
     <!-- %m输出的信息,%p日志级别,%t线程名,%d日期,%c类的全名,%i索引【从数字0开始递增】,,, -->
     <!-- appender是configuration的子节点，是负责写日志的组件。 -->
     <!-- ConsoleAppender：把日志输出到控制台 -->
@@ -40,11 +41,12 @@
     <!-- 控制台输出日志级别 -->
     <root level="info">
         <appender-ref ref="STDOUT" />
+        <appender-ref ref="CatAppender" />
     </root>
     <!-- 指定项目中某个包，当有日志操作行为时的日志记录级别 -->
-    <!-- com.appley为根包，也就是只要是发生在这个根包下面的所有日志操作行为的权限都是DEBUG -->
+    <!-- com.answercloud.demo为根包，也就是只要是发生在这个根包下面的所有日志操作行为的权限都是DEBUG -->
     <!-- 级别依次为【从高到低】：FATAL > ERROR > WARN > INFO > DEBUG > TRACE  -->
-    <logger name="com.appleyk" level="DEBUG">
+    <logger name="com.answercloud.demo" level="DEBUG">
         <appender-ref ref="syslog" />
     </logger>
 </configuration>
